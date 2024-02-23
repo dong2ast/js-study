@@ -1,22 +1,7 @@
-import { QueryClient, QueryClientProvider } from "react-query";
-import Router from "./Router";
-
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      suspense: true,
-      useErrorBoundary: true,
-      retry: 0,
-    },
-  },
-});
+import { Router } from "./Router.tsx";
 
 function App() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <Router />
-    </QueryClientProvider>
-  );
+  return <Router />;
 }
 
 export default App;
