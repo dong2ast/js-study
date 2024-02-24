@@ -1,3 +1,4 @@
+import postComment from "../../api/postComment";
 import Comment from "../Comment";
 import CommentInput from "../CommentInput";
 import {
@@ -37,13 +38,24 @@ const List = [
 ];
 
 function CommentList() {
+  // const handleClickPostComment = async () => {
+
+  // }
+  //   const data = postComment({
+  //     content: "어쩌구",
+  //     boardId: 1,
+  //     nickname: "abcdefghij",
+  //   });
+
   return (
     <Wrapper>
       <CommentNumberContainer>
         <CommentText>댓글</CommentText>
         <CommentNumber>124</CommentNumber>
       </CommentNumberContainer>
+
       <CommentInput />
+
       <div>
         {List.map((element) => (
           <Comment

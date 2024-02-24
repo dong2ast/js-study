@@ -4,10 +4,10 @@ import { Text, Wrapper } from "./MenuBar.style";
 function MenuBar() {
   return (
     <Wrapper>
-      <img src={Home} />
-      <img src={ArrowGrey} />
+      <Home />
+      <ArrowGrey />
       <Text variant="board">게시판</Text>
-      <img src={ArrowGrey} />
+      <ArrowGrey />
       <Text variant="notice">공지사항</Text>
     </Wrapper>
   );

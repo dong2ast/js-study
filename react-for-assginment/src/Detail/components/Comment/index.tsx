@@ -16,7 +16,7 @@ function Comment(props: CommentProps) {
       <InfoContainer>
         <Info>
           <Text variant="nickname">{nickname}</Text>
-          <img src={Partition} />
+          <Partition />
           <Text variant="createdAt">{date}</Text>
         </Info>
       </InfoContainer>

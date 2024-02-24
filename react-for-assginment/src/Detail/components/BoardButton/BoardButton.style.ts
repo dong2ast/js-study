@@ -35,7 +35,6 @@ export const HeartButton = styled.button`
 `;
 
 export const HeartText = styled.span`
-  font-family: Pretendard;
   font-weight: 500;
   font-size: 15px;
   line-height: 15px;
@@ -58,7 +57,6 @@ export const ReturnButton = styled.button`
 `;
 
 export const ReturnButtonText = styled.span`
-  font-family: Pretendard;
   font-weight: 500;
   font-size: 19px;
   line-height: 19px;

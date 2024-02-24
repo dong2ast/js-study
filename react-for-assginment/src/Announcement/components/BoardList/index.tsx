@@ -35,7 +35,7 @@ function BoardList() {
           {data.map((element: BoardProps, index: number) => (
             <Board
               key={element.board_id}
-              number={4 - index}
+              number={index}
               title={element.title}
               createdAt={element.createdAt
                 .slice(0, 10)
@@ -46,11 +46,11 @@ function BoardList() {
         </div>
       </ListWrapper>
       <div>
-        <img src={LeftArrows} />
-        <img src={LeftArrow} />
+        <LeftArrows />
+        <LeftArrow />
         페이지네이션
-        <img src={RightArrow} />
-        <img src={RightArrows} />
+        <RightArrow />
+        <RightArrows />
       </div>
     </Wrapper>
   );

@@ -1,18 +1,17 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  width: 100%;
   height: 161px;
   border-radius: 12px;
   border: 1px solid #f1f1f1;
   padding: 24px;
   gap: 10px;
-  background: #eef2f8;
+  background-color: #eef2f8;
 `;
 
 export const Input = styled.input`
   white-space: pre-wrap;
-  width: 100%;
+  width: 95%;
   height: 87px;
   padding: 16px;
   gap: 10px;

@@ -44,7 +44,7 @@ function BoardButton() {
     <Wrapper>
       <HeartButtonContainer>
         <HeartButton onClick={toggleHandler}>
-          <img src={isHeart ? Heart : EmptyHeart} />
+          {isHeart ? <Heart /> : <EmptyHeart />}
         </HeartButton>
         <HeartText>{count}</HeartText>
       </HeartButtonContainer>

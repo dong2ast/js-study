@@ -4,7 +4,6 @@ export const Wrapper = styled.ol`
   display: flex;
   justify-content: space-between;
 
-  width: 100%;
   padding: 20px 20.5px 20px 35px;
 `;
 

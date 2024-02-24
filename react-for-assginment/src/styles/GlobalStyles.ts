@@ -154,70 +154,73 @@ const resetCss = css`
 const gStyle = css`
   ${resetCss}
 
-  //   #root, body, html {
-//     margin: 0 auto;
+  #root, body, html {
+    margin: 0 auto;
 
-//     max-width: 192rem;
-//     -ms-overflow-style: none; /* 인터넷 익스플로러 */
-//     scrollbar-width: none; /* 파이어폭스 */
-//   }
+    max-width: 192rem;
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
 
-//   #root::-webkit-scrollbar {
-//     display: none; /* 크롬, 사파리, 오페라, 엣지 */
-//   }
+    font-family: "Pretendard";
+  }
 
-//   * {
-//     max-width: 192rem;
-//     box-sizing: border-box;
-//   }
+  #root::-webkit-scrollbar {
+    display: none; /* 크롬, 사파리, 오페라, 엣지 */
+  }
 
-//   html {
-//     -webkit-touch-callout: none;
-//     -webkit-tap-highlight-color: rgb(0 0 0 / 0%);
+  /* * {
+    max-width: 192rem;
+    box-sizing: border-box;
+  } */
 
-//     scroll-behavior: smooth;
+  html {
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: rgb(0 0 0 / 0%);
 
-//     user-select: none;
+    scroll-behavior: smooth;
 
-//     display: flex;
-//     justify-content: center;
+    user-select: none;
 
-//     font-size: 62.5%;
-//   }
+    display: flex;
+    justify-content: center;
 
-//   ul,
-//   li {
-//     padding-left: 0;
-//     list-style: none;
-//   }
+    box-sizing: border-box;
 
-//   a {
-//     color: inherit;
+    /* 62.5% 적용하는 이유 : https://velog.io/@qhflrnfl4324/html-font-size-62.5-%EB%A5%BC-%EC%A0%81%EC%9A%A9%ED%95%98%EC%9E%90 */
+    font-size: 62.5%;
+  }
 
-//     text-decoration: none;
-//   }
+  ul,
+  li {
+    padding-left: 0;
+    list-style: none;
+  }
 
-//   input,
-//   button {
-//     outline: none;
+  a {
+    color: inherit;
 
-//     border: none;
-//     background-color: transparent;
-//   }
+    text-decoration: none;
+  }
 
-//   button {
-//     cursor: pointer;
+  input,
+  button {
+    outline: none;
 
-//     padding: 0;
-//   }
+    border: none;
+    background-color: transparent;
+  }
 
-//   input {
-//     appearance: none;
+  button {
+    cursor: pointer;
+    padding: 0;
+  }
+  input {
+    appearance: none;
 
-//     &:focus {
-//       outline: none;
-//     }
-//   }
+    &:focus {
+      outline: none;
+    }
+  }
 
   @font-face {
     font-family: Pretendard;

@@ -14,7 +14,6 @@ export const ListWrapper = styled.div`
 export const Column = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 100%;
   padding: 16px 26px;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
