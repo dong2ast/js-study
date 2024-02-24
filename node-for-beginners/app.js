@@ -20,22 +20,17 @@ app.get("/", (req, res) => {
     if (err) console.log("quert is not excute" + err);
     else {
       //   res.send(result);
-      res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
-      res.json;
-      res.end(
-        JSON.stringify({
-          data: {
-            boardList: result,
-          },
-        })
-      );
+      // res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+      // res.json;
+      result.map((r) => {});
+      res.send(result);
     }
   });
   //여기가 DTO 연결부
   //   res.writeHead(200, { "Content-Type": "application/json" });
   //   res.end(
   //     JSON.stringify({
-  //       data: "Hello",
+  //       data: {boardList: result},
   //     })
   //   );
 });

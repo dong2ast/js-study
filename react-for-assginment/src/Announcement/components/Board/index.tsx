@@ -4,17 +4,17 @@ interface BoardProps {
   key: number;
   number: number;
   title: string;
-  date: string;
+  createdAt: string;
 }
 
 function Board(props: BoardProps) {
   //구조분해할당
-  const { number, title, date } = props;
+  const { number, title, createdAt } = props;
   return (
     <Wrapper>
       <Text>{number}</Text>
       <Text>{title}</Text>
-      <Text>{date}</Text>
+      <Text>{createdAt}</Text>
     </Wrapper>
   );
 }

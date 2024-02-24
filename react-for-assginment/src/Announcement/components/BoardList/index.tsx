@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   LeftArrow,
   LeftArrows,
@@ -5,16 +6,19 @@ import {
   RightArrows,
 } from "../../../assets";
 import MenuBar from "../../../components/MenuBar";
+import getBoardList from "../../api/getBoardList";
 import Board from "../Board";
 import Search from "../Search";
 import { Column, ListWrapper, Wrapper, Text } from "./BoardList.style";
 
-const List = [
-  { id: 1, title: "월간 축제 어쩌구", date: "2023.10.01" },
-  { id: 2, title: "월간 축제 어쩌구", date: "2023.10.01" },
-  { id: 3, title: "월간 축제 어쩌구", date: "2023.10.01" },
-  { id: 4, title: "월간 축제 어쩌구", date: "2023.10.01" },
-];
+interface BoardProps {
+  board_id: number;
+  title: string;
+  content: string;
+  createdAt: string;
+}
+
+const data = await getBoardList();
 
 function BoardList() {
   return (
@@ -28,15 +32,17 @@ function BoardList() {
           <Text>등록일</Text>
         </Column>
         <div>
-          {List.map((element) => (
+          {data.map((element: BoardProps, index: number) => (
             <Board
-              key={element.id}
-              number={element.id}
+              key={element.board_id}
+              number={4 - index}
               title={element.title}
-              date={element.date}
+              createdAt={element.createdAt
+                .slice(0, 10)
+                .replace("-", ". ")
+                .replace("-", ". ")}
             />
           ))}
-          '
         </div>
       </ListWrapper>
       <div>

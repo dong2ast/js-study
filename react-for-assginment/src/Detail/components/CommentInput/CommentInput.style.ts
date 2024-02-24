@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Input = styled.input`
+  white-space: pre-wrap;
   width: 100%;
   height: 87px;
   padding: 16px;

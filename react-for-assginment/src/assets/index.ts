@@ -9,6 +9,7 @@ import RightArrows from "./icon/RightArrows.svg";
 import XBtn from "./icon/XBtn.svg";
 import Glass from "./icon/Glass.svg";
 import Heart from "./icon/Heart.svg";
+import EmptyHeart from "./icon/EmptyHeart.svg";
 import Partition from "./icon/Partition.svg";
 
 export {
@@ -23,5 +24,6 @@ export {
   XBtn,
   Glass,
   Heart,
+  EmptyHeart,
   Partition,
 };
