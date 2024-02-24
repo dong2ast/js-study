@@ -17,6 +17,7 @@ export const Title = styled.div`
 `;
 
 export const TitleText = styled.span`
+  font-family: Pretendard;
   font-size: 22px;
   line-height: 26.25px;
   font-weight: 700;
@@ -24,6 +25,7 @@ export const TitleText = styled.span`
   color: #23282e;
 `;
 export const TitleDate = styled.span`
+  font-family: Pretendard;
   font-size: 18px;
   line-height: 22px;
   font-weight: 500;
@@ -32,7 +34,9 @@ export const TitleDate = styled.span`
 
 export const Content = styled.div`
   padding: 20px 0 20px 0;
-  white-space: pre;
+  white-space: pre-wrap;
+
+  font-family: Pretendard;
   font-size: 16px;
   line-height: 29px;
   font-weight: 500;

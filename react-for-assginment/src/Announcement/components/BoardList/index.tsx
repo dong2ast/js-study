@@ -10,10 +10,10 @@ import Search from "../Search";
 import { Column, ListWrapper, Wrapper, Text } from "./BoardList.style";
 
 const List = [
-  { id: 1, title: "월간 축제 어쩌구", date: "2023.10.1" },
-  { id: 2, title: "월간 축제 어쩌구", date: "2023.10.1" },
-  { id: 3, title: "월간 축제 어쩌구", date: "2023.10.1" },
-  { id: 4, title: "월간 축제 어쩌구", date: "2023.10.1" },
+  { id: 1, title: "월간 축제 어쩌구", date: "2023.10.01" },
+  { id: 2, title: "월간 축제 어쩌구", date: "2023.10.01" },
+  { id: 3, title: "월간 축제 어쩌구", date: "2023.10.01" },
+  { id: 4, title: "월간 축제 어쩌구", date: "2023.10.01" },
 ];
 
 function BoardList() {

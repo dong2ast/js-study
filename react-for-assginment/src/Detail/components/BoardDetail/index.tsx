@@ -1,4 +1,5 @@
 import MenuBar from "../../../components/MenuBar";
+import BoardButton from "../BoardButton";
 import {
   Content,
   Main,
@@ -28,7 +29,7 @@ function BoardDetail() {
           <TitleDate>2023. 11. 22 10:04:26</TitleDate>
         </Title>
         <Content>{content}</Content>
-        <div>좋아요 + 목록 버튼</div>
+        <BoardButton />
       </Main>
     </Wrapper>
   );

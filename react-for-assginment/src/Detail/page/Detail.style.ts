@@ -8,5 +8,5 @@ export const Wrapper = styled.div`
 `;
 
 export const BoardContainer = styled.section`
-  width: 80%;
+  width: 65%;
 `;

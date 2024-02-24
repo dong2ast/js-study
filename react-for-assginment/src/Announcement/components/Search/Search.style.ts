@@ -40,9 +40,9 @@ export const ClearBtn = styled.button`
   align-items: center;
 
   width: 24px;
-  height: 24px;
+  height: 20px;
 
   background-color: transparent;
-  border: nore;
+  border: none;
   cursor: pointer;
 `;

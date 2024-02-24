@@ -8,6 +8,8 @@ import RightArrow from "./icon/RightArrow.svg";
 import RightArrows from "./icon/RightArrows.svg";
 import XBtn from "./icon/XBtn.svg";
 import Glass from "./icon/Glass.svg";
+import Heart from "./icon/Heart.svg";
+import Partition from "./icon/Partition.svg";
 
 export {
   FirstBanner,
@@ -20,4 +22,6 @@ export {
   RightArrows,
   XBtn,
   Glass,
+  Heart,
+  Partition,
 };
