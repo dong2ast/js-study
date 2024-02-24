@@ -11,7 +11,6 @@ import XBtn from "./icon/XBtn.svg?react";
 import Glass from "./icon/Glass.svg?react";
 import Heart from "./icon/Heart.svg?react";
 import EmptyHeart from "./icon/EmptyHeart.svg?react";
-import Partition from "./icon/Partition.svg?react";
 
 export {
   FirstBanner,
@@ -26,5 +25,4 @@ export {
   Glass,
   Heart,
   EmptyHeart,
-  Partition,
 };

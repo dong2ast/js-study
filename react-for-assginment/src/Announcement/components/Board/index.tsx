@@ -1,4 +1,12 @@
-import { Wrapper, Text } from "./Board.style";
+import { useNavigate } from "react-router-dom";
+import {
+  Wrapper,
+  Text,
+  Title,
+  TitleContainer,
+  Number,
+  Date,
+} from "./Board.style";
 
 interface BoardProps {
   key: number;
@@ -8,13 +16,19 @@ interface BoardProps {
 }
 
 function Board(props: BoardProps) {
+  const navigate = useNavigate();
   //구조분해할당
   const { number, title, createdAt } = props;
+
+  const handleClickButton = () => {
+    navigate(`/detail/${number + 1}`);
+  };
+
   return (
     <Wrapper>
-      <Text>{number}</Text>
-      <Text>{title}</Text>
-      <Text>{createdAt}</Text>
+      <Number>{number}</Number>
+      <Title onClick={handleClickButton}>{title}</Title>
+      <Date>{createdAt}</Date>
     </Wrapper>
   );
 }

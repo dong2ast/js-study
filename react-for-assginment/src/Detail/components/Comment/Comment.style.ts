@@ -5,23 +5,22 @@ export const Wrapper = styled.div`
   flex-direction: column;
 
   /* height: 255px; */
-  border-radius: 12px;
-  border: 1px solid #e8e9e9;
+  border-radius: 1.2rem;
+  border: 0.1rem solid #e8e9e9;
   background-color: #fcfcfc;
-  padding: 20px 24px 0 24px;
+  padding: 2rem 2.4rem 0 2.4rem;
 
-  margin-top: 18px;
+  margin-bottom: 1.8rem;
 `;
 
 export const Content = styled.span`
   white-space: pre-wrap;
   width: 100%;
   /* height: 145px; */
-  padding: 0 0 10px 0;
-  font-family: Pretendard;
+  padding-bottom: 1rem;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 29px;
+  font-size: 1.8rem;
+  line-height: 2.9rem;
   letter-spacing: -1.03%;
   color: #616569;
 `;
@@ -30,24 +29,24 @@ export const InfoContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid #e8e9e9;
+  border-top: 0.1rem solid #e8e9e9;
   width: 100%;
-  height: 35px;
-  padding: 8px 0 10px 0;
+  height: 3.5rem;
+  padding: 0.8rem 0 1rem 0;
 `;
 
 export const Info = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 193px;
-  height: 15px;
-  gap: 16px;
+  width: 19.3rem;
+  height: 1.5rem;
+  gap: 1.6rem;
 `;
 
 export const Text = styled.span<{ variant: string }>`
-  font-size: 15px;
-  line-height: 15px;
+  font-family: Pretendard;
+  font-size: 1.5rem;
   font-weight: ${({ variant }) => (variant === "nickname" ? 600 : 500)};
   color: ${({ variant }) => (variant === "nickname" ? "black" : "#B5B7B9")};
 `;

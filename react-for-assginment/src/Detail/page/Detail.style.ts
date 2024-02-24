@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   height: 100dvh;
   display: flex;
   justify-content: center;
-  padding: 40px 0 40px 0;
+  padding: 4rem 0 4rem 0;
 `;
 
 export const BoardContainer = styled.section`

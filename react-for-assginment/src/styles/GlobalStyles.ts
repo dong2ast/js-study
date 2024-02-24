@@ -161,7 +161,10 @@ const gStyle = css`
     -ms-overflow-style: none; /* 인터넷 익스플로러 */
     scrollbar-width: none; /* 파이어폭스 */
 
-    font-family: "Pretendard";
+    font-family: Pretendard;
+
+    /* 62.5% 적용하는 이유 : https://velog.io/@qhflrnfl4324/html-font-size-62.5-%EB%A5%BC-%EC%A0%81%EC%9A%A9%ED%95%98%EC%9E%90 */
+    font-size: 62.5%;
   }
 
   #root::-webkit-scrollbar {
@@ -185,9 +188,6 @@ const gStyle = css`
     justify-content: center;
 
     box-sizing: border-box;
-
-    /* 62.5% 적용하는 이유 : https://velog.io/@qhflrnfl4324/html-font-size-62.5-%EB%A5%BC-%EC%A0%81%EC%9A%A9%ED%95%98%EC%9E%90 */
-    font-size: 62.5%;
   }
 
   ul,

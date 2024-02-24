@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
       //   res.send(result);
       // res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
       // res.json;
-      result.map((r) => {});
+      // result.map((r) => {r.});
       res.send(result);
     }
   });

@@ -1,26 +1,27 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.section`
-  width: 80%;
-  padding: 44px 0 64px 0;
+  width: 65%;
+  padding: 4.4rem 0 6.4rem 0;
 `;
 
 export const ListWrapper = styled.div`
+  box-sizing: border-box;
   width: 100%;
-  height: 392px;
-  padding: 20px 0 20px 20;
+  height: 39.2rem;
+  padding: 2rem 0 2rem 0;
 `;
 
 export const Column = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 16px 26px;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  padding: 1.6rem 4.3rem 1.6rem 2.6rem;
+  border-top: 0.1rem solid black;
+  border-bottom: 0.1rem solid black;
 `;
 
 export const Text = styled.span`
-  font-size: 16px;
-  line-height: 16px;
+  font-family: Pretendard;
+  font-size: 1.6rem;
   font-weight: 400;
 `;

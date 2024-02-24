@@ -6,12 +6,12 @@ export const SearchWrapper = styled.div`
   justify-content: flex-end;
 
   width: 100%;
-  height: 64px;
-  margin: 16px 0 20px 0;
+  height: 6.4rem;
+  margin: 1.6rem 0 2rem 0;
 
-  border-radius: 14px;
+  border-radius: 1.4rem;
   background-color: #f1f6fe;
-  border: 1px solid #86c5ff0a;
+  border: 0.1rem solid #86c5ff0a;
 `;
 
 export const InputWrapper = styled.div`
@@ -19,19 +19,26 @@ export const InputWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  width: 346px;
-  height: 44px;
-  padding: 0 12px 0 10px;
-  margin-right: 10px;
+  width: 36.8rem;
+  height: 4.4rem;
+  padding: 0 1.2rem 0 1rem;
+  margin-right: 1rem;
 
-  border-radius: 14px;
+  border-radius: 1.4rem;
   background-color: #ffffff;
 `;
 
 export const Input = styled.input`
-  width: 298px;
+  width: 29.8rem;
   border: none;
   outline: none;
+
+  &::placeholder {
+    font-family: Pretendard;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: #616569;
+  }
 `;
 
 export const ClearBtn = styled.button`
@@ -39,8 +46,8 @@ export const ClearBtn = styled.button`
   justify-content: center;
   align-items: center;
 
-  width: 24px;
-  height: 20px;
+  width: 2.4rem;
+  height: 2rem;
 
   background-color: transparent;
   border: none;

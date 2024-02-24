@@ -1,17 +1,13 @@
 import { useEffect, useState } from "react";
-import {
-  LeftArrow,
-  LeftArrows,
-  RightArrow,
-  RightArrows,
-} from "../../../assets";
+
 import MenuBar from "../../../components/MenuBar";
 import getBoardList from "../../api/getBoardList";
-import Board from "../Board";
 import Search from "../Search";
 import { Column, ListWrapper, Wrapper, Text } from "./BoardList.style";
+import PostList from "../PostList";
+import Pagination from "../Pagination";
 
-interface BoardProps {
+export interface BoardProps {
   board_id: number;
   title: string;
   content: string;
@@ -21,37 +17,62 @@ interface BoardProps {
 const data = await getBoardList();
 
 function BoardList() {
+  const [value, setValue] = useState("");
+  const [page, setPage] = useState(1);
+  const [postData, setPostData] = useState<BoardProps[]>([
+    {
+      board_id: 0,
+      title: "",
+      content: "",
+      createdAt: "",
+    },
+  ]);
+
+  const BOARD_LIMIT = 4;
+  const offset = (page - 1) * BOARD_LIMIT;
+
+  const postingData = (BoardList: BoardProps[]) => {
+    if (BoardList) {
+      const result = BoardList.slice(offset, offset + BOARD_LIMIT);
+      setPostData(result.reverse());
+    }
+  };
+
+  useEffect(() => {
+    postingData(data);
+  }, [page]);
+
+  /*필터링함수 */
+  const handleInput = (event: React.FormEvent<HTMLFormElement>) => {
+    console.log("test" + value);
+    event.preventDefault();
+    const temp = data.filter((item: BoardProps) => {
+      return item.title.includes(value);
+    });
+    console.log(temp);
+  };
   return (
     <Wrapper>
       <MenuBar />
-      <Search />
+      <form onSubmit={handleInput}>
+        <Search value={value} setValue={setValue} />
+      </form>
       <ListWrapper>
         <Column>
           <Text>번호</Text>
           <Text>목록</Text>
           <Text>등록일</Text>
         </Column>
-        <div>
-          {data.map((element: BoardProps, index: number) => (
-            <Board
-              key={element.board_id}
-              number={index}
-              title={element.title}
-              createdAt={element.createdAt
-                .slice(0, 10)
-                .replace("-", ". ")
-                .replace("-", ". ")}
-            />
-          ))}
-        </div>
+
+        <PostList data={postData} />
       </ListWrapper>
-      <div>
-        <LeftArrows />
-        <LeftArrow />
-        페이지네이션
-        <RightArrow />
-        <RightArrows />
-      </div>
+
+      <Pagination
+        page={page}
+        limit={BOARD_LIMIT}
+        total={data.length}
+        setPage={setPage}
+      />
     </Wrapper>
   );
 }
