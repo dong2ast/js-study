@@ -1,9 +1,5 @@
+import { PostListProps } from "../../types/AnnouncementTypes";
 import Board from "../Board";
-import { BoardProps } from "../BoardList";
-
-interface PostListProps {
-  data: BoardProps[];
-}
 
 function PostList(props: PostListProps) {
   const { data } = props;
@@ -12,7 +8,7 @@ function PostList(props: PostListProps) {
       {data.map((element) => (
         <Board
           key={element.board_id}
-          number={element.board_id - 1}
+          number={element.orderNum}
           title={element.title}
           createdAt={element.createdAt
             .slice(0, 10)

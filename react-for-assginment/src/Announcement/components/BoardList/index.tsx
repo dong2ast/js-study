@@ -6,55 +6,50 @@ import Search from "../Search";
 import { Column, ListWrapper, Wrapper, Text } from "./BoardList.style";
 import PostList from "../PostList";
 import Pagination from "../Pagination";
+import postingData from "../../utils/PostingData";
+import { ListType } from "../../types/AnnouncementTypes";
+import PostCount from "../../utils/PostCount";
 
-export interface BoardProps {
-  board_id: number;
-  title: string;
-  createdAt: string;
-}
-
+const BOARD_LIMIT = 4;
 const data = await getBoardList();
 
 function BoardList() {
-  const [value, setValue] = useState("");
-  const [page, setPage] = useState(1);
-  const [postData, setPostData] = useState<BoardProps[]>([
+  const [value, setValue] = useState(""); //input
+  const [search, setSearch] = useState(""); //enter
+  const [list, setList] = useState<ListType[]>(PostCount(data)); //filter
+  const [page, setPage] = useState(1); //page
+  const [postData, setPostData] = useState<ListType[]>([
     {
       board_id: 0,
+      orderNum: 0,
       title: "",
       createdAt: "",
     },
-  ]);
+  ]); //layout data
 
-  const BOARD_LIMIT = 4;
-  const offset = (page - 1) * BOARD_LIMIT;
-
-  const postingData = (BoardList: BoardProps[]) => {
-    if (BoardList) {
-      const result = BoardList.slice(offset, offset + BOARD_LIMIT);
-      setPostData(result.reverse());
-    }
+  /** input으로 입력받은 값대로 List 필터링 */
+  const filteringList = (search: string) => {
+    const filteredList = data.filter((item) => {
+      return item.title.includes(search);
+    });
+    setList(PostCount(filteredList)); //필터링 된 리스트 state에 저장
   };
 
   useEffect(() => {
-    postingData(data);
-  }, [page]);
+    // 입력된 검색어가 있을 경우
+    if (search !== "") {
+      filteringList(search); //검색어대로 리스트 필터링 진행
+      setPage(1); // 화면에 보여줄 기본 페이지는 첫페이지니까 1로 초기화
+      setSearch(""); //검색 이후에 search 비워주기
+    }
 
-  /*필터링함수 */
-  const handleInput = (event: React.FormEvent<HTMLFormElement>) => {
-    console.log("test" + value);
-    event.preventDefault();
-    const temp = data.filter((item: BoardProps) => {
-      return item.title.includes(value);
-    });
-    console.log(temp);
-  };
+    postingData({ list, page, BOARD_LIMIT, setPostData });
+  }, [page, search]);
+
   return (
     <Wrapper>
       <MenuBar />
-      <form onSubmit={handleInput}>
-        <Search value={value} setValue={setValue} />
-      </form>
+      <Search value={value} setValue={setValue} setSearch={setSearch} />
       <ListWrapper>
         <Column>
           <Text>번호</Text>
@@ -68,7 +63,7 @@ function BoardList() {
       <Pagination
         page={page}
         limit={BOARD_LIMIT}
-        total={data.length}
+        total={list.length}
         setPage={setPage}
       />
     </Wrapper>
