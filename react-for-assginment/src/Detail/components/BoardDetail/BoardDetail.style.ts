@@ -33,6 +33,7 @@ export const TitleDate = styled.span`
 `;
 
 export const Content = styled.div`
+  font-family: Pretendard;
   padding: 2rem 0;
   white-space: pre-wrap;
 

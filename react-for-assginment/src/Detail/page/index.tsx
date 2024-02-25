@@ -16,7 +16,7 @@ function Detail() {
 
   // data가 정의되었는지 확인 후 처리
   if (!data) {
-    return <div>Loading...</div>; // 데이터가 로드 중인 동안 표시할 내용
+    return <div>Loading...</div>;
   }
 
   return (

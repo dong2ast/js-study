@@ -36,8 +36,8 @@ app.get("/", (req, res) => {
 });
 
 app.get("/detail/:boardId", (req, res) => {
-  const bodySql = `select body from board where board_id=${req.params.boardId}; `;
-  const commentSql = `select comment_id, content, comment.createdAt, nickname from comment where board_id=${req.params.boardId}; `;
+  const bodySql = `select title, body, createdAt from board where board_id=${req.params.boardId}; `;
+  const commentSql = `select comment_id, content, createdAt, nickname from comment where board_id=${req.params.boardId}; `;
   conn.query(bodySql + commentSql, function (err, results, field) {
     if (err) console.log("query is not excute" + err);
     else {
@@ -48,7 +48,7 @@ app.get("/detail/:boardId", (req, res) => {
       // res.send(results[0][0].body);
       // res.send(results[1]);
       res.send({
-        body: results[0][0].body,
+        body: results[0][0],
         comment: results[1],
       });
     }

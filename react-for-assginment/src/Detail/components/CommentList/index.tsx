@@ -1,3 +1,4 @@
+import { CommentProps } from "../../types/DetailTypes";
 import Comment from "../Comment";
 import CommentInput from "../CommentInput";
 import {
@@ -6,17 +7,6 @@ import {
   CommentText,
   Wrapper,
 } from "./CommentList.style";
-
-interface Comment {
-  id: number;
-  nickname: string;
-  content: string;
-  createdAt: string;
-}
-
-interface CommentProps {
-  data: Comment[];
-}
 
 function CommentList(props: CommentProps) {
   const { data } = props;
@@ -30,9 +20,9 @@ function CommentList(props: CommentProps) {
       <CommentInput />
 
       <div>
-        {data.map((element) => (
+        {data.map((element, index) => (
           <Comment
-            key={element.id}
+            key={index}
             nickname={element.nickname}
             content={element.content}
             date={element.createdAt
