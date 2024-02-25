@@ -9,17 +9,12 @@ import {
   Wrapper,
 } from "./BoardDetail.style";
 
-const content = `안녕하세요. 가이드미입니다.
-          
-아래 기간동안 휴무로 인해 업무가 중단됩니다.
+interface BoardDetailProps {
+  data: string;
+}
 
-휴무기간 : 2023.12.25 - 2024.01.02 9일간
-
-문의 답변은 2024.01.03 오전에 순차적으로 진행됩니다.
-
-감사합니다.`;
-
-function BoardDetail() {
+function BoardDetail(props: BoardDetailProps) {
+  const { data } = props;
   return (
     <Wrapper>
       <MenuBar />
@@ -28,7 +23,7 @@ function BoardDetail() {
           <TitleText>연말 연휴 휴무 공지 (2023.12.25 - 2024.01.02)</TitleText>
           <TitleDate>2023. 11. 22 10:04:26</TitleDate>
         </Title>
-        <Content>{content}</Content>
+        <Content>{data}</Content>
         <BoardButton />
       </Main>
     </Wrapper>

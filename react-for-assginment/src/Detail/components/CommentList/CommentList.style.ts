@@ -8,11 +8,9 @@ export const Wrapper = styled.div`
 export const CommentNumberContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
 
   margin-bottom: 3.2rem;
 
-  width: 10.7rem;
   height: 4.5rem;
 `;
 
@@ -24,6 +22,7 @@ export const CommentText = styled.span`
 `;
 
 export const CommentNumber = styled.span`
+  margin-left: 1rem;
   font-size: 2.8rem;
   font-weight: 700;
   line-height: 4.5rem;

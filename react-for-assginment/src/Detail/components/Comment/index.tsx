@@ -1,4 +1,3 @@
-import { Partition } from "../../../assets";
 import { Content, Info, InfoContainer, Wrapper, Text } from "./Comment.style";
 
 interface CommentProps {
@@ -10,12 +9,13 @@ interface CommentProps {
 
 function Comment(props: CommentProps) {
   const { nickname, content, date } = props;
+  const rename = nickname.slice(0, -2) + "**";
   return (
     <Wrapper>
       <Content>{content}</Content>
       <InfoContainer>
         <Info>
-          <Text variant="nickname">{nickname}</Text>
+          <Text variant="nickname">{rename}</Text>
           <Text variant="createdAt">|</Text>
           <Text variant="createdAt">{date}</Text>
         </Info>

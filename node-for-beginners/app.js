@@ -15,7 +15,7 @@ app.post("/comment", (req, res) => {});
 
 app.get("/", (req, res) => {
   //여기가 DAO 연결부
-  const sql = "select * from board";
+  const sql = "select board_id, title, createdAt from board";
   conn.query(sql, function (err, result) {
     if (err) console.log("quert is not excute" + err);
     else {
@@ -33,6 +33,26 @@ app.get("/", (req, res) => {
   //       data: {boardList: result},
   //     })
   //   );
+});
+
+app.get("/detail/:boardId", (req, res) => {
+  const bodySql = `select body from board where board_id=${req.params.boardId}; `;
+  const commentSql = `select comment_id, content, comment.createdAt, nickname from comment where board_id=${req.params.boardId}; `;
+  conn.query(bodySql + commentSql, function (err, results, field) {
+    if (err) console.log("query is not excute" + err);
+    else {
+      //   res.send(result);
+      // res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+      // res.json;
+      // result.map((r) => {r.});
+      // res.send(results[0][0].body);
+      // res.send(results[1]);
+      res.send({
+        body: results[0][0].body,
+        comment: results[1],
+      });
+    }
+  });
 });
 
 app.listen(app.get("port"), app.get("host"), () => {

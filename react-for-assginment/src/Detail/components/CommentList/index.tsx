@@ -1,4 +1,3 @@
-import postComment from "../../api/postComment";
 import Comment from "../Comment";
 import CommentInput from "../CommentInput";
 import {
@@ -37,32 +36,38 @@ const List = [
   },
 ];
 
-function CommentList() {
-  // const handleClickPostComment = async () => {
+interface Comment {
+  id: number;
+  nickname: string;
+  content: string;
+  createdAt: string;
+}
 
-  // }
-  //   const data = postComment({
-  //     content: "어쩌구",
-  //     boardId: 1,
-  //     nickname: "abcdefghij",
-  //   });
+interface CommentProps {
+  data: Comment[];
+}
 
+function CommentList(props: CommentProps) {
+  const { data } = props;
   return (
     <Wrapper>
       <CommentNumberContainer>
         <CommentText>댓글</CommentText>
-        <CommentNumber>124</CommentNumber>
+        <CommentNumber>{data.length}</CommentNumber>
       </CommentNumberContainer>
 
       <CommentInput />
 
       <div>
-        {List.map((element) => (
+        {data.map((element) => (
           <Comment
             key={element.id}
             nickname={element.nickname}
             content={element.content}
-            date={element.date}
+            date={element.createdAt
+              .slice(0, 10)
+              .replace("-", ". ")
+              .replace("-", ". ")}
           />
         ))}
       </div>

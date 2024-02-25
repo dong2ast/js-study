@@ -45,6 +45,7 @@ export const Info = styled.div`
 `;
 
 export const Text = styled.span<{ variant: string }>`
+  white-space: nowrap;
   font-family: Pretendard;
   font-size: 1.5rem;
   font-weight: ${({ variant }) => (variant === "nickname" ? 600 : 500)};

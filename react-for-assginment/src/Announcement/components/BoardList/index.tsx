@@ -10,7 +10,6 @@ import Pagination from "../Pagination";
 export interface BoardProps {
   board_id: number;
   title: string;
-  content: string;
   createdAt: string;
 }
 
@@ -23,7 +22,6 @@ function BoardList() {
     {
       board_id: 0,
       title: "",
-      content: "",
       createdAt: "",
     },
   ]);

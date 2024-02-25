@@ -6,6 +6,7 @@ const db_info = {
   user: "code_crain",
   password: "narcissus113",
   database: "codecrain",
+  multipleStatements: true,
 };
 
 module.exports = {

@@ -1,12 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import {
-  Wrapper,
-  Text,
-  Title,
-  TitleContainer,
-  Number,
-  Date,
-} from "./Board.style";
+import { Wrapper, Title, Number, Date } from "./Board.style";
 
 interface BoardProps {
   key: number;
