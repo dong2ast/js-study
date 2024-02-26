@@ -19,3 +19,8 @@ export interface CommentProps {
   data: Comment[];
   boardId: string;
 }
+
+export interface DetailDataType {
+  body: BoardDetail;
+  comment: Comment[];
+}

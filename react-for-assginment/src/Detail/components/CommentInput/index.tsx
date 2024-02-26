@@ -1,4 +1,4 @@
-import { FieldErrors, FormState, UseFormRegister } from "react-hook-form";
+import { FieldErrors, UseFormRegister } from "react-hook-form";
 import {
   ConfirmWrapper,
   Input,

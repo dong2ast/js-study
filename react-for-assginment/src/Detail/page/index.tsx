@@ -4,11 +4,14 @@ import CommentList from "../components/CommentList";
 import { BoardContainer, Wrapper } from "./Detail.style";
 import { useEffect, useState } from "react";
 import getDetail from "../api/getDetail";
+import { DetailDataType } from "../types/DetailTypes";
 
 function Detail() {
   const { boardId } = useParams() as { boardId: string };
 
-  const [data, setData] = useState<any>(null); // 데이터 상태 추가
+  const [data, setData] = useState<DetailDataType>(); // 데이터 상태 추가
+
+  console.log(data);
 
   useEffect(() => {
     getDetail(boardId, setData);

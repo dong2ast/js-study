@@ -2,7 +2,7 @@ import { api } from "../../libs/api";
 import { ListType } from "../types/AnnouncementTypes";
 
 const getBoardList = async () => {
-  const { data } = await api.get(`/`);
+  const { data } = await api.get<ListType[]>(`/`);
 
   const temp = data.map((e, index) => {
     const type: ListType = {
