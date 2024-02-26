@@ -7,7 +7,7 @@ interface postCommentProps {
 }
 
 const postComment = ({ content, boardId, nickname }: postCommentProps) => {
-  const response = api.post("/api/comment", {
+  const response = api.post("/detail/comment", {
     content: content,
     board_id: boardId,
     nickname: nickname,

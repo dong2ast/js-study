@@ -84,3 +84,9 @@ export const BtnText = styled.span`
   letter-spacing: -1%;
   color: #ffffff;
 `;
+
+export const WarnningText = styled.span`
+  font-family: Pretendard;
+  font-weight: 500;
+  color: tomato;
+`;

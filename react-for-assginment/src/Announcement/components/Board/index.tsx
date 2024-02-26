@@ -10,7 +10,7 @@ interface BoardProps {
 
 function Board(props: BoardProps) {
   const navigate = useNavigate();
-  //구조분해할당
+
   const { number, title, createdAt } = props;
 
   const handleClickButton = () => {

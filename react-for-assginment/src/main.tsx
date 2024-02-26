@@ -8,7 +8,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
       <ScrollToTop />
-
       <App />
     </BrowserRouter>
   </React.StrictMode>

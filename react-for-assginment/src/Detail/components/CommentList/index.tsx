@@ -7,9 +7,37 @@ import {
   CommentText,
   Wrapper,
 } from "./CommentList.style";
+import postComment from "../../api/postComment";
+import { SubmitHandler, useForm } from "react-hook-form";
+
+export type Formvalues = {
+  body: string;
+  nickname: string;
+};
 
 function CommentList(props: CommentProps) {
-  const { data } = props;
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Formvalues>({
+    defaultValues: {
+      body: "",
+      nickname: "",
+    },
+  });
+  const { data, boardId } = props;
+
+  const handlePostComment: SubmitHandler<Formvalues> = (data) => {
+    const { body, nickname } = data;
+    postComment({
+      content: body,
+      boardId: Number(boardId),
+      nickname: nickname,
+    });
+    window.location.reload();
+  };
+
   return (
     <Wrapper>
       <CommentNumberContainer>
@@ -17,7 +45,9 @@ function CommentList(props: CommentProps) {
         <CommentNumber>{data.length}</CommentNumber>
       </CommentNumberContainer>
 
-      <CommentInput />
+      <form onSubmit={handleSubmit(handlePostComment)}>
+        <CommentInput register={register} errors={errors} />
+      </form>
 
       <div>
         {data.map((element, index) => (

@@ -17,4 +17,5 @@ interface Comment {
 
 export interface CommentProps {
   data: Comment[];
+  boardId: string;
 }

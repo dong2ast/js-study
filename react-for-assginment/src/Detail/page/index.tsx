@@ -23,7 +23,7 @@ function Detail() {
     <Wrapper>
       <BoardContainer>
         <BoardDetail data={data.body} />
-        <CommentList data={data.comment} />
+        <CommentList data={data.comment} boardId={boardId} />
       </BoardContainer>
     </Wrapper>
   );
